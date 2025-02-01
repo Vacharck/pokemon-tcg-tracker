@@ -1,0 +1,1 @@
+env file doesn't work with vite due to the api so the key is hard coded

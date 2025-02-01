@@ -1,0 +1,32 @@
+body{
+  background-color: #012;
+  color: aliceblue;
+  height: 100%;
+  margin: 0;
+}
+
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px;
+}
+
+.card {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & img{
+    width: 100px;
+  }
+
+  & button{
+    width: 100px;
+  } 
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+}
