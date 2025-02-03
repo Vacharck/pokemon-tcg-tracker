@@ -1,4 +1,5 @@
 import { Filters } from "./Filters"
+import { Sort } from "./Sort";
 
 export function Header({ refreshCards }){
 
@@ -9,17 +10,22 @@ export function Header({ refreshCards }){
         refreshCards({search: query})
     }
 
+
     return(
-        <header className=''>
+        <header className='header'>
             <h1>
-                Pokemon TCG Tracker
+                Pokemon TCG Tracker - Keeping up with your collection made easy!
             </h1>
+
             <form onSubmit={handleSubmit}>
                 <input type="text" name="query" placeholder='Charizard, Blastoise, Venusaur...'/>
                 <input type="submit" value='Search'/>
             </form>
 
-            <Filters/>
+            <div className="accordion">
+                <Sort/>
+                <Filters/>
+            </div>    
         </header>
     )
 }

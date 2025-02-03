@@ -1,13 +1,19 @@
 export function Card({id, name, url, prices}){
     const tcgPrices = Object.entries(prices ?? {})
 
-    const handleClick = () => {
-
-    }
-
     return(
         <li className="card">
-            <img src={url} alt={name} />
+            <div>
+                <img className="card-img" src={url} alt={name} />
+                <div className="buttons">
+                    <button>
+                        wish
+                    </button>
+                    <button>
+                        collected
+                    </button>
+                </div>   
+            </div> 
 
             <div className="card-div">
                 <h3>
@@ -20,34 +26,20 @@ export function Card({id, name, url, prices}){
 
                         return (
                             <li className="prices" key={key}>
-                                <h3>
-                                    {key} 
-                                </h3>
+                                <h4>
+                                    {key}:
+                                </h4>
                                 <small>
-                                    Lowest price: {value?.low}
+                                    Average price: ${value?.mid}
                                 </small>
                                 <small>
-                                    Average price: {value?.mid}
-                                </small>
-                                <small>
-                                    Highest price: {value?.high}
-                                </small>
-                                <small>
-                                    Average market price: {value?.market}
+                                    Average market price: ${value?.market}
                                 </small> 
                             </li>
                         )
                     })}
                 </ul>
-            </div>
-
-            <div className="card-buttons">
-                <button onClick={handleClick}>
-                    Add to binder
-                </button>
-                <button>
-                    Wishlist
-                </button>
+                 
             </div>
         </li>
     )
