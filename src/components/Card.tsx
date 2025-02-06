@@ -1,12 +1,19 @@
-export function Card({id, name, url, prices}){
+import { CardT } from "../types";
+
+export function Card( {id, name, url, prices, set} : CardT ):React.JSX.Element  {
+    
     const tcgPrices = Object.entries(prices ?? {})
+
+    const handleWishCollected = () => {
+        return id
+    }
 
     return(
         <li className="card">
             <div>
                 <img className="card-img" src={url} alt={name} />
                 <div className="buttons">
-                    <button>
+                    <button onClick={handleWishCollected}>
                         wish
                     </button>
                     <button>
@@ -20,6 +27,10 @@ export function Card({id, name, url, prices}){
                     {name}
                 </h3>
                 
+                <h4>
+                    {set}
+                </h4>
+
                 <ul>
                     {tcgPrices.map(prices => {
                         const [key, value] = prices

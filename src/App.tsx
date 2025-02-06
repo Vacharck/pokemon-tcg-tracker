@@ -22,7 +22,9 @@ function App() {
       </BinderProvider>    
       
       <footer>
-
+        <h2>
+          Hi, This is my footer. Information will be posted here momentarily.
+        </h2>
       </footer>
     </>
   )
